@@ -1,0 +1,82 @@
+java is platform independent (run on any device) because
+the byte code(.class) file on any system as it is machine readable since you don't have to compile it again.
+ 
+JDK - Java Development Kit -> contains
+	- JRE - Java Runtime Environment -> contains
+	- JVM - Java Virtual Machine -> contains
+	- JIT - Just in Time Compiler
+ 
+JDK - lets you write java code. Plus has development tools and compiler called javaC to write code.
+ 
+JRE - has library to run java code.
+ 
+JVM - reads the code line by line
+ 
+JIT - saves machine code for all the work done so far as to not repeat conversion again and again
+ 
+class loader - loading(converts code to binary data)
+             - linking(links data to referenced data)
+ 
+garbage collection - manages memory (ex= if there is a data that does not have any reference it is eligible for garbage collection) at the end of the program everything will go to garbage collection.
+
+Heap vs stack
+If you declare a variable, it’s reference is stored in the stack, while the value is stored in the heap
+In java everything primitive is passed by value in functions
+SCP = *A singleton* string constant pool, (when a  string is assigned to a variable, JVM checks to see if it is in the pool, if it is already in the pool, the variable simply points to the string as opposed to making a new string. If a string is created without a reference, it does not join the pool) “increases efficiency”
+Garbage collector collects values without references
+String = Strings are immutable because if you modify one that is being pointed to by another, the other would be affected
+
+Runtime polymorphism is when jvm decides which function to run at runtime based on parameter difference
+
+If there’s no modifier before a variable type, its modifier is default (this limits access to only inside the class
+
+
+
+
+Class
+Package
+Subclass
+(same pkg)
+Subclass
+(diff pkg)
+World
+public
++
++
++
++
++
+protected
++
++
++
++
+
+
+default
++
++
++
+
+
+
+
+private
++
+
+
+
+
+
+
+
+
+
++ : accessible
+
+Control Flow of static
+1- static blocks methods and variables are identified
+2-  static things  are executed and assigned
+3-  main is executed
+
+*Compile time polymorphism
