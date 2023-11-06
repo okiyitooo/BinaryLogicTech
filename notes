@@ -1,3 +1,36 @@
+.class files can be run on any platform 
+
+ 
+
+Jdk: java development kit(lets you write java code, has some development tools as well as compilers (java c.(java compiler))) 
+
+→ 
+
+jre: java runtime environment(within jdk and has all libraries needed for running java code(provides an environment for java basically))→ 
+
+Jvm: java virtual machine(reads the code line by line)→ 
+
+Jit: just in time compiler(suppose there is a function that has been called 1000 times in your program, it tells jvm it does not have to convert the function to byte code each time, and instead take the byte code from itself ) 
+
+ 
+
+Class loader(loads classes(loading: converting variable to binary data)(linking: initialization and replacement of references to values)) 
+
+ 
+
+Garbage collector(if jvm finds there are unreferenced variables(lying in memory but nothing is pointing to them) these variables are eligible for garbage collection) 
+
+ 
+
+(Jvm can't run a main class if it's not public) 
+
+(static keyword binds the call of a class not to any object that has been created but the class itself as opposed to the needing to create an object before calling the method which is why the main method must be static) 
+
+ 
+
+(Lossy conversion is when you lose data while casting) 
+
+ 
 java is platform independent (run on any device) because
 the byte code(.class) file on any system as it is machine readable since you don't have to compile it again.
  
