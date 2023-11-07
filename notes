@@ -131,3 +131,30 @@ cant have default methods						from java 8 onlwards, interfaces were allowed to 
 									by default all attributes of an interface have the public modifier
 									if all methods of its classes require re-implementing an interface should be used
 A functional interface only has one abstract method
+
+Hashcode is an integervalue that is unique for every object.
+
+If two objects are equal, then their hashcodes must be equal as well however they do not need to be equal in order to have the same hashcode
+
+a final variable is constant
+a final method cannot be overriden
+a final class can not be extended
+
+final keyword can optimize performance since the compiler knows the variable wont be changed
+It can also be good for security as it ensures the data cannot be changed
+
+Exceptions					vs	Errors
+can be handled						cant
+checked(compiletime)	unchecked(runtime)	
+
+try-catch-finally
+
+finally brackets always run regardless of if the exception is caught
+
+(Exception).printStackTrace() shows all the subsequent calls leading up to the exception.
+
+
+Wrapper Classes
+Classes that represent primitive classes
+Unboxing is the conversion of a wrapper class to a priimitive type
+autoboxing is the conversion of primitive types to wrapper classes
