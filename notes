@@ -113,3 +113,21 @@ Control Flow of static
 3-  main is executed
 
 *Compile time polymorphism
+Encapsulation-hide details 
+
+heiarchical enheritance				vs			multiple inheritance 
+-multiple classes extend the same class			one class extends multiple classes
+
+
+Abstraction – hide complexity (Abstract Classes and Interfaces)
+
+Abstract classes						vs						Interface
+at least one abstract method(method with no implementation)		all methods are abstract
+*abstract method(abstract returntype name();)				no need to write abstract keyword in interfaces
+"extends"								implements
+child class								classes implementing the interface
+only one class can be extended						more than one can be implemented
+cant have default methods						from java 8 onlwards, interfaces were allowed to have static and default methods
+									by default all attributes of an interface have the public modifier
+									if all methods of its classes require re-implementing an interface should be used
+A functional interface only has one abstract method
