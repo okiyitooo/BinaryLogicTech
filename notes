@@ -191,11 +191,26 @@ Pros								Cons
 Constant  insertion and deletion from end and beginning		
 Random Access
 
-Set
+Set -> Table of hashes(Hashtable)
 TreeSet->Ordered set(Ordered in ascending order)
 HashSet
-LinkedHashSet->Ordered HashSet(ordered by insertion)
+LinkedHashSet->Ordered HashSet(ordered by insertion) ->Linked table of hashes (HashTable and LinkedList)
 
 Stack
 Pro						Cons
 Constant insertion				Linear deletion
+
+Nov 8th
+
+listIterators can iterate backwards
+Collections make changing data structures a lot easier
+
+Deque class in java has no "ListIterator)
+
+HashTable is the underline implementation of sets
+
+To sort a Collection by multiple * genres
+
+Collections.sort("collection","Class that implements comparator<Collection type> where it compares the genre you want")
+
+HashMap->Keys are Set
