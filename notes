@@ -158,3 +158,44 @@ Wrapper Classes
 Classes that represent primitive classes
 Unboxing is the conversion of a wrapper class to a priimitive type
 autoboxing is the conversion of primitive types to wrapper classes
+
+		Iterable(Interface)
+			|
+		Collection(Interface)
+			|
+_________________________________________________
+|			|			|
+List(Interface)		Queue(Interface)	Set(Interface)->HashSet->LinkedHashSeet
+|			|			|
+ArrayList		Deque			SortedSet(Interface)
+LinkedList					|
+Vector(SynchronizedArrayList)->Stack		NavigableSet(Interface)
+						|
+						TreeSet
+
+Storing retrieving and manipulating data-> data structure
+
+
+ArrayList(Contiguous memory allocation)
+Pros(LinkedList)			Cons(Inefficient)
+RandomAccess				Insertion(in beginning and middle),deletion
+
+LinkedList(no Contigious memory allocation)
+Pros					Cons
+Insertion,Deletion			RandomAccess
+
+BufferOverflow Attack, reaching the end of the memory? and adding your script there
+
+Deque
+Pros								Cons
+Constant  insertion and deletion from end and beginning		
+Random Access
+
+Set
+TreeSet->Ordered set(Ordered in ascending order)
+HashSet
+LinkedHashSet->Ordered HashSet(ordered by insertion)
+
+Stack
+Pro						Cons
+Constant insertion				Linear deletion
