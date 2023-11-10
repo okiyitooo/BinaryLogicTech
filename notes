@@ -214,3 +214,16 @@ To sort a Collection by multiple * genres
 Collections.sort("collection","Class that implements comparator<Collection type> where it compares the genre you want")
 
 HashMap->Keys are Set
+
+
+Nov 10th
+
+Project concept ->
+login prompt
+user authentification with database
+Entity<Employee>
+1. Display all entities
+2. Display one entity based on primary key
+3. Update any Existing entity
+4. Create new Entity
+5.  Delete Entity
