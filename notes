@@ -232,3 +232,15 @@ Entity<Employee>
 3. Update any Existing entity
 4. Create new Entity
 5.  Delete Entity
+
+Nov 13th
+
+JDBC Steps
+
+1. Importing package.
+2. loading driver and registering it.
+3. Establishing the connection.
+4. Creating the statement.
+5. Creating/Accepting the ResultSet.
+6. Processing the ResultSet.
+7. Closing the statement and Connection.
