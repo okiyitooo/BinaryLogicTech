@@ -244,3 +244,6 @@ JDBC Steps
 5. Creating/Accepting the ResultSet.
 6. Processing the ResultSet.
 7. Closing the statement and Connection.
+
+
+CRUD - create read update and delete
