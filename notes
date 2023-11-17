@@ -247,3 +247,30 @@ JDBC Steps
 
 
 CRUD - create read update and delete
+
+November 15th 
+
+a thread is a part of a code
+when you create a thread it's in the new state
+when it's been asked to do something
+when it's running it's in running state
+it could be in the waiting or sleep state if
+
+Thread Class ->two methods
+callable and runnable interface
+start() is required for the thread to act like a thread
+
+November 16th
+
+Lambda expressions dont need return types, access modifier, or object name, eg ()-> {}
+Consumer interface is used for lambdas that consume parameters(return nothing)
+Supplier interface returns the T
+Predicate tests t
+
+Valuable -> @FunctionalInterfaces
+	Comparable & Comparator	->Comparison
+	Runnable	
+		Callable	->Thread
+	Predicate	}
+	Consumer	}->lambda
+	Supplier	}
