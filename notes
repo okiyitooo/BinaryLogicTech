@@ -274,3 +274,12 @@ Valuable -> @FunctionalInterfaces
 	Predicate	}
 	Consumer	}->lambda
 	Supplier	}
+
+
+Nov 17th
+
+Streams never modify the original array
+
+Intermediate operations -> (filter,reduce,map,etc)
+
+Optional<T> is used to check if a value is present or not, it saves you from null pointer exceptions
