@@ -1,19 +1,13 @@
 import java.sql.*;
 import java.util.*;
 
-public class Donor {
-	static  {
-		try {
-			Class.forName("com.mysql.cj.jdbc.Driver");
-		} catch (ClassNotFoundException e) {
-			e.printStackTrace();
-		}
-	}
+public class DonorDAO {
+	
 	String username;
 	String password;
 	int[] donationPreferences;
 	DatabaseClass database;
-	public Donor() {
+	public DonorDAO() throws ClassNotFoundException {
 		database = new DatabaseClass();
 	}
 	public void getOrgans() {
@@ -184,7 +178,7 @@ public class Donor {
 
         System.out.println("Password: ");
         String Password = scanner.nextLine();
-        return database.updatePassword(username, Password);
+        return database.updatePassword(username, Password, scanner);
      }
 
 	public boolean deleteAccount(Scanner scanner) throws SQLException {
@@ -215,6 +209,50 @@ public class Donor {
 		}
 		return database.getAndPrintAllOrgans();
 		
+	}
+	static void requests(DonorDAO user, Scanner input, boolean exit) throws SQLException {
+		while (!exit) {
+	        System.out.println("Would you like to: ");
+	        System.out.println("1. Delete Account");
+	        System.out.println("2. Count your organs");
+	        System.out.println("3. Change password");
+	        System.out.println("4. Exit");
+	        if(user.isRoot()) {
+	        	System.out.println("5. Get all from DONORS database");
+	        	System.out.println("6. Get all from ORGANS database");
+	        }
+	        if (!input.hasNext())
+	        	input.next();
+	        int choice = input.nextInt();
+	        switch (choice) {
+	            case 1:
+	                // Handle account deletion
+	                user.deleteAccount(input);
+	                exit = true;
+	                break;
+	            case 2:
+	                // Handle getting organ donation information
+	                user.getOrgans();
+	                break;
+	            case 3:
+	            	// Handle Changing Password
+	            	user.changePassword(input);
+	            	break;
+	            case 4:
+	            	// Bye
+	            	System.out.println("Bye");
+	                exit = true;
+	                break;
+	            case 5:
+	            	user.getAll(input);
+	            	break;
+	            case 6:
+	            	user.getAllOrgans(input);
+	            	break;
+	            default:
+	                System.out.println("Invalid option.");
+	        }
+	    }
 	}
 	
 }

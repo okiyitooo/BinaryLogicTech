@@ -1,18 +1,16 @@
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.Scanner;
 
 public class DatabaseClass {
-	public Connection getConnection() throws SQLException {
-		String url="jdbc:mysql://localhost:3306/OrganDatabase";
-		String myUserName="root";
-		String myPassword="MySQLInstallerRootAccountPassword123!@#";
-		Connection connection = DriverManager.getConnection(url, myUserName, myPassword);
-		return connection;
+	DBCConnection connection;
+	DatabaseClass() throws ClassNotFoundException{
+		connection = new DBCConnection();
 	}
+	
 	public boolean addOrgansToOrganDatabase(int[] organs) throws SQLException {
 		String insertQuery = "UPDATE Organs\r\n"
 				+ "SET Hearts = Hearts + ?,\r\n"
@@ -22,7 +20,7 @@ public class DatabaseClass {
 				+ "    BoneMarrow_kg = BoneMarrow_kg + ?,\r\n"
 				+ "    Bones = Bones + ?\r\n"
 				+ "WHERE user = \"Market\"";
-		PreparedStatement statement = getConnection().prepareStatement(insertQuery);
+		PreparedStatement statement = connection.getConnection().prepareStatement(insertQuery);
 		for (int i = 0; i < organs.length; i++)
 			statement.setInt(i+1, organs[i]);
 		statement.executeUpdate();
@@ -30,13 +28,12 @@ public class DatabaseClass {
 	}
 	public boolean checkUsernameExists(String username) {
 	    String selectQuery = "SELECT COUNT(*) FROM donors WHERE username = ?";
-	    try (Connection connection = getConnection();
+	    try (Connection connection = this.connection.getConnection();
 	         PreparedStatement statement = connection.prepareStatement(selectQuery)) {
 	        statement.setString(1, username);
 	        ResultSet resultSet = statement.executeQuery();
 	        if (resultSet.next()) {
 	            int count = resultSet.getInt(1);
-	            System.out.println("Count: "+count);
 	            return count > 0; // Username exists if count is greater than 0
 	        }
 	    } catch (SQLException e) {
@@ -71,25 +68,33 @@ public class DatabaseClass {
 	}
 
 
-	public boolean updatePassword(String username, String Password) throws SQLException {
+	public Connection getConnection() throws SQLException {
+		// TODO Auto-generated method stub
+		return this.connection.getConnection();
+	}
+
+	public boolean updatePassword(String username, String Password, Scanner scanner) throws SQLException {
 	    // Establish connection
 	    Connection connection = getConnection();
 
 	    // Prepare update statement
 	    if (!checkUsernameExists(username)) {System.out.println("Username does not exist!");return false;}
 	    if (!isCorrectPassword(username,Password)) {System.out.println("IncorrectPassword!"); return false;}
-	    if (!validatePasswordStrength(Password)) {System.out.println("Password too weak!"); return false;}
+	    System.out.println("Enter new Password: ");
+	    String password = scanner.nextLine();
+	    if (!validatePasswordStrength(password)) {System.out.println("Password too weak!"); return false;}
 	    String sql = "UPDATE donors SET password = ? WHERE username = ?";
 	    PreparedStatement statement = connection.prepareStatement(sql);
 
 	    // Set update parameters
-	    statement.setString(1, Password);
+	    statement.setString(1, password);
 	    statement.setString(2, username);
-
+	    statement.execute();
 	    // Close resources
 	    statement.close();
 	    connection.close();
-
+	    System.out.println(Password+" has been discarded");
+	    System.out.println("Password change Successful!");
 	    return true;
 	}
 	public boolean validatePasswordStrength(String password) {

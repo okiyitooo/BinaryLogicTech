@@ -4,10 +4,10 @@ import java.sql.SQLException;
 import java.util.*;
 import java.io.BufferedReader;
 
-public class OrganMarketRunner {
+public class Runner {
 	static boolean isRoot;
-	public static void main(String[] args) throws SQLException, IOException {
-		Donor user = new Donor();
+	public static void main(String[] args) throws SQLException, IOException, ClassNotFoundException {
+		DonorDAO user = new DonorDAO();
 		Scanner input = new Scanner(System.in);
 		System.out.println("Click 1 to login or 2 to signUp");
 		int goIn = input.nextInt();
@@ -35,6 +35,7 @@ public class OrganMarketRunner {
 			//signUp()
 			exit = !user.requestSignUpUserInfo(input);
 		}
+		if(!exit)System.out.println("Welcome to the Organ Trailer! (❁´◡`❁)");
 	    while (!exit) {
 	        System.out.println("Would you like to: ");
 	        System.out.println("1. Delete Account");
