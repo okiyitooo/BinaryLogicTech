@@ -302,3 +302,52 @@ Pre Order -> acessing data before the call(recursive)
 Nov 22
 
 In a graph, disconnected graphs are called components
+
+Nov 27
+
+3 steps To implement spring core 
+
+1. Configuration
+2. Dependency Injector ->Parse/read configurations and then understands what to do
+3. Use and get required beans(spring objects)
+
+Configuration:
+
+1. XML Configuration
+2. Java Configuration
+3. Annotation
+
+
+XML Configuration eg,
+
+<beans>
+//making a pedigree object using the default constructor
+<bean id = 'pedigree' class = "com.blit.Pedigree"<!--imaginary class location-->>
+//beans in beans
+</bean>
+//inject pedigree into a dog
+<bean id = 'dog' class = 'com.blit.Dog'>
+	<constructor-args ref = 'pedigree'>
+</bean>
+//inject dog into dogowner
+<bean id = 'dog_owner' class = 'com.blit.DogOwner'>
+	<constructor-args reg = 'dog'>
+</bean>
+</beans>
+
+
+creating a container->
+BeanFactory beanFactory = new XMLBeanFactory(new ClassPath(xml configuration file path))
+	Here's what happens->
+		1. it reads the xml file and validates it
+		2. creates logical memory partitions in the jvm if valid
+		3. loads the spring configuration file and places the meta data in the partitions
+		4. returns beanFactory reference
+
+creating an object from an xml reference
+DogOwner dogOwner = beanFactory.getBean("DogOwner");
+	Here's what happens->
+		1. beanFactory goes to IOC container to look for the bean
+		2. if found, the class name is read and loaded into memory and an instatiation is returned
+
+//IOC is inversion of control
