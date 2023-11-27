@@ -298,3 +298,7 @@ Queue for breadth first
 
 Post order -> accessing data after recursive call
 Pre Order -> acessing data before the call(recursive)
+
+Nov 22
+
+In a graph, disconnected graphs are called components
