@@ -351,3 +351,12 @@ DogOwner dogOwner = beanFactory.getBean("DogOwner");
 		2. if found, the class name is read and loaded into memory and an instatiation is returned
 
 //IOC is inversion of control
+
+constructur injections are only for mandatory dependencies
+
+XML draWbacks ->
+
+1. Need to learn xml
+2. No TypeSafety
+3. Poor readability
+4. Maintenance
