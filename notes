@@ -360,3 +360,20 @@ XML draWbacks ->
 2. No TypeSafety
 3. Poor readability
 4. Maintenance
+
+Nov 30
+
+If a scope is not defined for a bean, it's scope is automatically singleton
+
+Spring MVC - Model View Controller
+
+Model -holds data
+View - Shows something to the end user
+Controller - Includes URL mapping
+
+Used to develop java web apps 
+Based on MVC design pattern
+Uses feautures of spring core (IOC and DI)
+
+Client(Web browser) ----> request ----> FrontController(DispatchServlet) ----> Controller ---->View template(JSP) ---->response ---->client
+
