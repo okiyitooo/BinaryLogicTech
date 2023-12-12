@@ -377,3 +377,21 @@ Uses feautures of spring core (IOC and DI)
 
 Client(Web browser) ----> request ----> FrontController(DispatchServlet) ----> Controller ---->View template(JSP) ---->response ---->client
 
+
+Steps for Spring MVC configuration
+1. Add web.xml file
+2. configure Spring mvc dispatcher servlet
+3. setup url mapping to spring mvc dispatcher servlet
+4. add spring-mvc-demo-servlet.xml(WEB-INF/spring-mvc-demo-servlet.xml)
+5. Add support for spring component scanning
+6. Add support for conversion and validation of the code
+
+Dec 5th
+
+orn = object relational mapping
+jpa = java persistence api
+
+
+Dec 6th
+
+hql = hibernate query language
