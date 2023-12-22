@@ -395,3 +395,35 @@ jpa = java persistence api
 Dec 6th
 
 hql = hibernate query language
+
+Dec 13th
+
+REST API is a combination of the kind of the request and the url
+
+Dec 14th
+
+CSRF -> Cross site request forgery
+
+Monolithic application: an application in which all changes are made everywhere in order to make an update.
+
+Constructor injections are used when a dependency is necessary
+
+Microservice is a single independent deployable thing: if you have to make changes to other parts of a jar, you dont have to affect other parts of the jar
+
+how to make a class(service) the primary representator of an interface (springboot
+
+ordered by priority:
+
+	@Autowired
+	@Qualifier("<Class name>")
+
+	@Primary -> at the top of class implementation
+
+	name your autowired object the lowercase version of the name of the class
+
+
+Project requirement
+
+	-pointCutExpressions
+	-DTOS
+	-Log4J
